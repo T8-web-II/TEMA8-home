@@ -1,50 +1,86 @@
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id") ?? "48";
-const produktImage = document.querySelector(".produktgrid");
+const id = params.get("id") ?? "13";
+const produktContainer = document.querySelector(".produktgrid");
 
-document.querySelector(".back-btn").addEventListener("click", goBack);
-function goBack() {
-  window.history.back();
-}
-console.log("ID fra URL:", id);
-fetch(`https://dummyjson.com/products/category/furniture`)
+// document.querySelector(".back-btn").addEventListener("click", goBack);
+// function goBack() {
+//   window.history.back();
+// }
+let currentImageIndex = 0;
+let images = [];
+
+fetch(`https://dummyjson.com/products/${id}`)
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
+    images = data.images?.length ? data.images : [data.thumbnail];
 
-    const soldOut = data.soldout == 1;
-    const soldOutText = soldOut
-      ? `<p class="soldOuttext color-me-white">SOLD OUT</p>`
+    const discountBadge = data.discountPercentage
+      ? `<div class="discount-badge">${Math.round(data.discountPercentage)}%</div>`
       : "";
-    const discountText =
-      data.discount > 0 ? `<p class="color-me-red">${data.discount}%</p>` : "";
-    const discountedPrice =
-      data.discount > 0
-        ? `<div class="discounted"><p>NOW DKK ${Math.round(data.price * (1 - data.discount / 100))},-</p></div>`
-        : "";
 
-    produktImage.innerHTML = `<div>
-        <img
-          src="https://cdn.dummyjson.com/product-images/kitchen-accessories/pan/thumbnail.webp"
-          alt="produktbillede"
-        />
+    const originalPrice = data.price;
+    const discountedPrice = Math.round(
+      data.price * (1 - data.discountPercentage / 100),
+    );
+
+    const dots = images
+      .map((_, i) => `<span class="dot ${i === 0 ? "active" : ""}"></span>`)
+      .join("");
+
+    produktContainer.innerHTML = `
+      <div class="imagelayout">
+        ${discountBadge}
+        <button class="arrow-btn left" onclick="changeImage(-1)">&#8592;</button>
+        <img id="main-image" src="${images[0]}" alt="${data.title}" />
+        <button class="arrow-btn right" onclick="changeImage(1)">&#8594;</button>
+        <div class="carousel-dots">${dots}</div>
       </div>
+
       <article>
-        <h1>title</h1>
+        <h1>${data.title}</h1>
         <div class="price">
-          <p>price</p>
-          <p>price now</p>
+          <p class="discountoverlay">${originalPrice},-</p>
+          <p class="discountedprice">NOW ${discountedPrice},-</p>
         </div>
-        <div>
-          <p>ratings</p>
-          <p>description</p>
+        <p class="ratings">Ratings: ${data.rating}</p>
+        <p>${data.description}</p>
+
+        <div class="info-box">
+          <p><strong>Warranty Information:</strong> ${data.warrantyInformation}</p>
+          <p><strong>Shipping Information:</strong> ${data.shippingInformation}</p>
+          <p><strong>Availability Status:</strong> ${data.availabilityStatus}</p>
         </div>
-        <div>
-            <p>weight</p>
-            <p>dimensions</p>
+
+        <div class="product-meta">
+          <p><strong>Brand:</strong> "${data.brand}"</p>
+          <p><strong>Sku:</strong> "${data.sku}"</p>
+          <p><strong>Weight:</strong> ${data.weight}kg</p>
+          <p><strong>Dimensions:</strong> Width: ${data.dimensions.width}cm, Height: ${data.dimensions.height}cm, Depth: ${data.dimensions.depth}cm</p>
         </div>
-      <div><button>how many</button><button>Add to Cart</button>
-    </div>
+
+        <div class="quantity-cart">
+          <div class="quantity-selector">
+            <button class="qty-btn" onclick="changeQty(-1)">-</button>
+            <span class="qty-display" id="qty">1</span>
+            <button class="qty-btn" onclick="changeQty(1)">+</button>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
       </article>
-      `;
+    `;
   });
+
+function changeImage(direction) {
+  currentImageIndex =
+    (currentImageIndex + direction + images.length) % images.length;
+  document.getElementById("main-image").src = images[currentImageIndex];
+  document.querySelectorAll(".dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentImageIndex);
+  });
+}
+
+function changeQty(change) {
+  const qtyEl = document.getElementById("qty");
+  const newQty = Math.max(1, parseInt(qtyEl.textContent) + change);
+  qtyEl.textContent = newQty;
+}
