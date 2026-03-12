@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: #2e1a47;
+}
+
+.logo-header svg {
+  height: 60px;
+  width: auto;
+}
+
+.navbar img {
+  height: 40px;
+}
+/* HEADER */
+
+header {
+  background-color: #e6e2d9;
+  padding: 20px 60px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo-header svg {
+  height: 50px;
+  width: auto;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #2e1a47;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+  opacity: 0.7;
+}
+
+/* FOOTER */
+
+footer {
+  background: #4c5fb7;
+  color: white;
+  padding: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-section img {
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .header-container {
+    padding: 0 10px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    width: 45%;
+    margin-top: 20px;
+  }
+}
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    margin-bottom: 10px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}
