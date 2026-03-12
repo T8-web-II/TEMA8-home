@@ -17,10 +17,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #2b1155;
   font-size: 3rem;
   font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .hero div {
@@ -32,17 +31,35 @@
   gap: 1rem;
 }
 
-.hero div a {
+.white {
   padding: 0.75rem 1.5rem;
-  background-color: #3f53b9;
-  color: white;
+  background-color: #fff;
+  color: #2b1155;
+  border: 2px solid #2b1155;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 
-.hero div a:hover {
+.white:hover {
+  background-color: #d0d8ff;
+}
+
+.blue {
+  padding: 0.75rem 1.5rem;
+  background-color: #3f53b9;
+  color: white;
+  border: 2px solid #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
+}
+
+.blue:hover {
   background-color: #2d3a8c;
 }
 
@@ -50,21 +67,16 @@ section:nth-of-type(2) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0;
-  gap: 1rem;
 }
 
 section:nth-of-type(2) > div:first-child {
   display: flex;
   justify-content: space-around;
-  width: 80%;
-  margin-bottom: 1rem;
 }
 
 section:nth-of-type(2) > div:first-child p {
   font-weight: bold;
   text-align: center;
-  width: 33%;
 }
 
 section:nth-of-type(2) > div:last-child {
@@ -78,4 +90,32 @@ section:nth-of-type(2) > div:last-child img {
   width: 30%;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.categories {
+  background-color: blanchedalmond;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.categories .container {
+  display: flex;
+  gap: 2rem;
+}
+
+.categories {
+  background-color: #f5f1e8;
+  font-family: "Bagel Fat One", system-ui;
+  font-size: 1.5rem;
+  font-style: normal;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.categories a {
+  color: #2b1155;
 }
