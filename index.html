@@ -58,19 +58,23 @@
         </div>
       </section>
       <section class="categories-section">
-        <div class="category-carousel">
-          <div class="category-slide">
-            <a class="category-label" href="produktliste.html?category=furniture">furniture</a>
-            <img src="https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/3.webp" alt="sofa" />
+        <div class="carousel-wrapper">
+          <button class="carousel-arrow left" onclick="slideCarousel(-1)">&#8592;</button>
+          <div class="category-carousel">
+            <div class="category-slide">
+              <a class="category-label" href="produktliste.html?category=furniture">furniture</a>
+              <img src="https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/3.webp" alt="sofa" />
+            </div>
+            <div class="category-slide">
+              <a class="category-label" href="produktliste.html?category=home-decoration">home decoration</a>
+              <img src="https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp" alt="indendørs gynge" />
+            </div>
+            <div class="category-slide">
+              <a class="category-label" href="produktliste.html?category=kitchen-accessories">kitchen accessories</a>
+              <img src="https://cdn.dummyjson.com/product-images/kitchen-accessories/black-aluminium-cup/1.webp" alt="sort kop" />
+            </div>
           </div>
-          <div class="category-slide">
-            <a class="category-label" href="produktliste.html?category=home-decoration">home decoration</a>
-            <img src="https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp" alt="indendørs gynge" />
-          </div>
-          <div class="category-slide">
-            <a class="category-label" href="produktliste.html?category=kitchen-accessories">kitchen accessories</a>
-            <img src="https://cdn.dummyjson.com/product-images/kitchen-accessories/black-aluminium-cup/1.webp" alt="sort kop" />
-          </div>
+          <button class="carousel-arrow right" onclick="slideCarousel(1)">&#8594;</button>
         </div>
       </section>
     </main>
