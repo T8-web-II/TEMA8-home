@@ -3,15 +3,17 @@ const productContainer = document.querySelector(".product-container");
 
 const categories = ["furniture", "home-decoration", "kitchen-accessories"];
 
-categories.forEach((category) => {
-  const link = document.createElement("a");
-  link.href = "#";
-  link.textContent = category.replace("-", " ");
+if (categoryContainer) {
+  categories.forEach((category) => {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = category.replace("-", " ");
 
-  link.addEventListener("click", () => loadProducts(category));
+    link.addEventListener("click", () => loadProducts(category));
 
-  categoryContainer.appendChild(link);
-});
+    categoryContainer.appendChild(link);
+  });
+}
 
 function loadProducts(category) {
   productContainer.innerHTML = "<p>Loader...</p>";

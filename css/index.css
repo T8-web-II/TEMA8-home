@@ -65,64 +65,33 @@
   background-color: #2d3a8c;
 }
 
-section:nth-of-type(2) {
+/* ---- Kategori-karrusel ---- */
+.category-carousel {
+  display: flex;
+  width: 100%;
+}
+
+.category-slide {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-section:nth-of-type(2) > div:first-child {
-  display: flex;
-  justify-content: space-around;
-}
-
-section:nth-of-type(2) > div:first-child p {
-  font-weight: bold;
-  text-align: center;
-}
-
-section:nth-of-type(2) > div:last-child {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  gap: 1rem;
-}
-
-section:nth-of-type(2) > div:last-child img {
-  width: 30%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.categories {
-  background-color: #f5f1e8;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-}
-
-.categories .container_categories {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between; /* Fordeler overskrifterne ligeligt over bredden */
-  width: 80%; /* Samme som billedernes container */
-  margin: 0 auto; /* Centrerer containeren */
-}
-
-.categories {
+.category-label {
+  display: block;
   background-color: #f5f1e8;
   font-family: "Bagel Fat One", system-ui;
   font-size: clamp(20px, 2.5vw, 40px);
-  font-style: normal;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-.categories a {
   color: #2b1155;
+  text-decoration: none;
+  padding: 1rem;
+  text-align: center;
+}
+
+.category-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 @media (max-width: 600px) {
@@ -150,27 +119,20 @@ section:nth-of-type(2) > div:last-child img {
     border-radius: 6px;
   }
 
-  .categories {
-    padding: 12px 0;
+  .category-carousel {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
   }
 
-  .categories .container_categories {
-    width: 92%;
-    gap: 12px;
-    justify-content: space-between;
-    font-size: 27px;
+  .category-carousel::-webkit-scrollbar {
+    display: none;
   }
 
-  section:nth-of-type(2) > div:last-child {
-    width: 92%;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  section:nth-of-type(2) > div:last-child img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
+  .category-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
   }
 
   /* footer {
