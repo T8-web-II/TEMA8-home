@@ -95,6 +95,9 @@ footer {
   color: white;
   padding: 40px;
 }
+.footer-section a {
+  color: #fff;
+}
 
 .footer-container {
   display: flex;
