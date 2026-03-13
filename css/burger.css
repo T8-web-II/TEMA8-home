@@ -47,6 +47,7 @@
     right: 0.3em;
     width: 150px;
     z-index: 1;
+    /* background-color: blue; */
   }
   header > nav li > a:after {
     content: "";

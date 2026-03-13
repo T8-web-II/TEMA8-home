@@ -47,10 +47,28 @@ a {
 .navbar img {
   height: 40px;
 }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.profile-icon {
+  width: clamp(26px, 3vw, 40px);
+  height: auto;
+}
+@media (max-width: 800px) {
+  .burger {
+    order: 2;
+  }
+
+  .nav-right a {
+    order: 1;
+  }
+}
 /* HEADER */
 
 header {
-  background-color: #e6e2d9;
+  background-color: #f5f1e8;
   padding: 20px 60px;
 }
 
