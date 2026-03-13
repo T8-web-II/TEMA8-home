@@ -18,7 +18,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: #2b1155;
-  font-size: 3rem;
+  font-size: clamp(30px, 5.5vw, 80px);
   font-weight: bold;
 }
 
@@ -31,35 +31,37 @@
   gap: 1rem;
 }
 
-.white {
-  padding: 0.75rem 1.5rem;
+/* HERO Knapper responsivt */
+.hero div a,
+.hero div button {
+  display: inline-block;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 5vw, 1.5rem);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+
+.hero div .white {
   background-color: #fff;
   color: #2b1155;
   border: 2px solid #2b1155;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
-  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 
-.white:hover {
+.hero div .white:hover {
   background-color: #d0d8ff;
 }
 
-.blue {
-  padding: 0.75rem 1.5rem;
+.hero div .blue {
   background-color: #3f53b9;
-  color: white;
+  color: #fff;
   border: 2px solid #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
-  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 
-.blue:hover {
+.hero div .blue:hover {
   background-color: #2d3a8c;
 }
 
@@ -103,12 +105,15 @@ section:nth-of-type(2) > div:last-child img {
 .categories .container_categories {
   display: flex;
   gap: 2rem;
+  justify-content: space-between; /* Fordeler overskrifterne ligeligt over bredden */
+  width: 80%; /* Samme som billedernes container */
+  margin: 0 auto; /* Centrerer containeren */
 }
 
 .categories {
   background-color: #f5f1e8;
   font-family: "Bagel Fat One", system-ui;
-  font-size: 1.5rem;
+  font-size: clamp(20px, 2.5vw, 40px);
   font-style: normal;
   width: 100%;
   display: flex;
