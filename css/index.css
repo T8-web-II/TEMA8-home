@@ -93,7 +93,7 @@ section:nth-of-type(2) > div:last-child img {
 }
 
 .categories {
-  background-color: blanchedalmond;
+  background-color: #f5f1e8;
   width: 100%;
   display: flex;
   justify-content: center;
