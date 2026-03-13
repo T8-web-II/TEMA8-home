@@ -100,7 +100,7 @@ section:nth-of-type(2) > div:last-child img {
   padding: 1rem 0;
 }
 
-.categories .container {
+.categories .container_categories {
   display: flex;
   gap: 2rem;
 }
