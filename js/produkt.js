@@ -2,10 +2,10 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id") ?? "13";
 const produktContainer = document.querySelector(".produktgrid");
 
-// document.querySelector(".back-btn").addEventListener("click", goBack);
-// function goBack() {
-//   window.history.back();
-// }
+document.querySelector(".back-btn").addEventListener("click", goBack);
+function goBack() {
+  window.history.back();
+}
 let currentImageIndex = 0;
 let images = [];
 

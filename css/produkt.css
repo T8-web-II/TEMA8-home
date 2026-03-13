@@ -7,6 +7,24 @@
   margin: 0 auto;
   align-items: start;
 }
+.back-btn {
+  display: inline-block;
+  margin-top: 2em;
+  margin-left: 2em;
+  padding: 8px 16px;
+  background-color: white;
+  color: #3f53b9;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #3f53b9;
+}
+.back-btn:hover {
+  background-color: #3f53b9;
+  color: white;
+}
 
 /* ---- Billedsektion ---- */
 .imagelayout {
