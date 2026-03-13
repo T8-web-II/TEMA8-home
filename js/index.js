@@ -1,3 +1,8 @@
+function slideCarousel(direction) {
+  const carousel = document.querySelector(".category-carousel");
+  carousel.scrollBy({ left: direction * carousel.clientWidth, behavior: "smooth" });
+}
+
 const categoryContainer = document.querySelector(".container_categories");
 const productContainer = document.querySelector(".product-container");
 
