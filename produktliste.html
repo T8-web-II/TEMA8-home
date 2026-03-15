@@ -1,13 +1,13 @@
-<html lang="da">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ekea</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/produktliste.css" />
     <link rel="stylesheet" href="css/generel.css" />
     <link rel="stylesheet" href="css/burger.css" />
-    <link rel="stylesheet" href="css/index.css" />
     <script src="js/burger.js" defer></script>
-    <script src="js/index.js" defer></script>
   </head>
   <body>
     <header>
@@ -26,7 +26,7 @@
             </svg>
           </a>
         </div>
-        <div class="nav-right">
+        <div>
           <ul class="nav-links">
             <li><a href="index.html">Hjem</a></li>
             <li><a href="produktliste.html">Produkter</a></li>
@@ -36,11 +36,19 @@
             <span class="line"></span>
             <span class="line"></span>
           </button>
-          <a href="profil.html"><img src="images/profil.svg" alt="" /></a>
+          <a href="profil.html"><img class="profile-icon" src="images/profil.svg" alt="" /></a>
         </div>
       </nav>
     </header>
-    <main></main>
+
+    <main>
+      <div class="categories">
+        <h1>Produkter</h1>
+        <p><a href="produktliste.html?category=furniture">Furniture</a> <a href="produktliste.html?category=kitchen-accessories">Kitchen Accessories</a><a href="produktliste.html?category=home-decoration">Home Decoration</a></p>
+      </div>
+
+      <div class="product_list_container" id="product-container"></div>
+    </main>
 
     <footer>
       <div class="footer-container">
@@ -69,5 +77,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/produktliste.js"></script>
   </body>
 </html>

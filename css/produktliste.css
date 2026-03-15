@@ -1,0 +1,268 @@
+/* ===========================
+   Kategori header
+   =========================== */
+
+.categories {
+  margin: 1.5rem;
+}
+.categories h1 {
+  text-align: right;
+  margin: 0;
+  padding-right: 3rem;
+  color: #2e1a47;
+}
+.categories p {
+  text-align: center;
+  margin: 2rem;
+}
+.categories a {
+  display: inline-block;
+  margin-top: 2em;
+  margin-left: 2em;
+  padding: 8px 16px;
+  background-color: white;
+  color: #3f53b9;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #3f53b9;
+}
+.categories a:hover {
+  background-color: #3f53b9;
+  color: white;
+}
+/* ===========================
+   Produktliste
+   =========================== */
+
+.product_list_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+
+/* --- Regular card --- */
+.produkt-kort a {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  min-height: 0;
+}
+.produkt-kort {
+  background-color: #f5f1e8;
+  border-bottom: 10px solid #626262;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.12s ease,
+    border-bottom-width 0.12s ease,
+    border-top 0.12s ease,
+    background-color 0.12s ease;
+}
+
+/* Hover */
+.produkt-kort:hover {
+  transform: translateY(4px);
+  border-bottom: 1px solid #e0ddd6;
+}
+
+/* Click  */
+.produkt-kort:active {
+  transform: translateY(5px);
+  border-bottom: 1px solid #979590;
+  border-top: 10px solid #72716d;
+  background-color: #cac7bf;
+  filter: saturate(70%);
+}
+
+/* --- Product image --- */
+.produkt-billede {
+  width: 100%;
+  margin: 10px;
+  object-fit: cover;
+  min-height: 0;
+}
+
+/* --- info --- */
+.produkt-info {
+  padding: 0.4rem 0.6rem 0.2rem;
+  border-top: 1px solid #e0ddd6;
+}
+
+.produkt-navn {
+  font-weight: 700;
+  color: #2e1a47;
+  text-align: right;
+  padding-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- pris --- */
+.produkt-pris {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  padding: 0.3rem 0.6rem 0.5rem;
+}
+
+.pris-normal {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.pris-nedsat {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #d24949;
+}
+
+.pris-original {
+  font-size: 0.75rem;
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+/* ===========================
+   BADGES
+   =========================== */
+
+.badge {
+  position: absolute;
+  top: 1.5rem;
+  left: -0.2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge.nedsat {
+  background-color: #ffadad;
+  color: #fff;
+}
+
+.badge.billigst {
+  font-size: 2rem;
+  background-color: #5f80da;
+  color: #fff;
+}
+
+/* ===========================
+   PROMO CARD
+   =========================== */
+
+.promo-kort {
+  padding: 1rem;
+  padding-top: 0;
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: unset;
+  background-color: #f5f1e8;
+  border-bottom: 10px solid #626262;
+}
+
+.promo-kort:hover {
+  transform: translateY(3px);
+  border-bottom: 1px solid #e0ddd6;
+}
+
+.promo-kort:active {
+  transform: translateY(5px);
+  border-top: 2px solid #ccc;
+  background-color: #ece8df;
+}
+
+.promo-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.promo-kort .produkt-billede {
+  object-fit: cover;
+
+  min-height: 0;
+}
+
+.promo-pris {
+  width: fit-content;
+  background-color: #3f53b9;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+/* ===========================
+   RESPONSIVITET
+   =========================== */
+
+@media (max-width: 1200px) {
+  .product_list_container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product_list_container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem 2rem;
+  }
+
+  .promo-kort {
+    grid-column: span 2;
+    grid-row: span 1;
+    aspect-ratio: 16 / 7;
+  }
+  .promo-kort .produkt-billede {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 500px) {
+  .product_list_container {
+    grid-template-columns: 1fr;
+    padding: 3rem;
+    gap: 0.5rem;
+  }
+  .categories p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -40px;
+  }
+
+  /* promokort matcher de andre */
+  .promo-kort {
+    grid-column: span 1;
+    grid-row: span 2;
+    aspect-ratio: 3 / 4;
+  }
+
+  .promo-kort .produkt-billede {
+    height: 100%;
+  }
+}
