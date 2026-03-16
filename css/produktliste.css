@@ -33,6 +33,16 @@
   background-color: #3f53b9;
   color: white;
 }
+
+.categories a.active {
+  background-color: #3f53b9;
+  color: white;
+}
+
+.categories a.active:hover {
+  background-color: #3f53b9;
+  color: white;
+}
 /* ===========================
    Produktliste
    =========================== */
