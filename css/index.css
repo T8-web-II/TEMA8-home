@@ -125,6 +125,10 @@
   object-fit: cover;
 }
 
+.category-label:hover {
+  background-color: #2b1155;
+  color: #f5f1e8;
+}
 @media (max-width: 600px) {
   .hero {
     max-height: none;
