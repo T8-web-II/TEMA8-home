@@ -1,6 +1,6 @@
 // Få fat i kategorien fra URL'en
 const params = new URLSearchParams(window.location.search);
-const category = params.get("category");
+const category = params.get("category") ?? "furniture";
 
 // ==============================
 // ⭐ Marker aktiv kategori-knap

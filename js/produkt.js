@@ -52,7 +52,7 @@ fetch(`https://dummyjson.com/products/${id}`)
         </div>
 
         <div class="product-meta">
-          <p><strong>Brand:</strong> "${data.brand}"</p>
+          ${data.brand ? `<p><strong>Brand:</strong> "${data.brand}"</p>` : ""}
           <p><strong>Sku:</strong> "${data.sku}"</p>
           <p><strong>Weight:</strong> ${data.weight}kg</p>
           <p><strong>Dimensions:</strong> Width: ${data.dimensions.width}cm, Height: ${data.dimensions.height}cm, Depth: ${data.dimensions.depth}cm</p>
